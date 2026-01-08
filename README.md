@@ -4,7 +4,7 @@ A high-performance C++ simulator that demonstrates **Physical Memory Allocation*
 
 This project simulates how an Operating System manages memory, including **First-Fit/Best-Fit/Worst-Fit strategies**, **Memory Coalescing**, **L1/L2 Cache Hierarchies**, and **Page Eviction (LRU)**.
 
-## Ì∫Ä Features
+### Features
 
 ### 1. Physical Memory Allocator (Continuous)
 - **Strategies:** Supports First Fit, Best Fit, and Worst Fit algorithms.
@@ -19,7 +19,7 @@ This project simulates how an Operating System manages memory, including **First
 
 ---
 
-## Ìª†Ô∏è How to Clone and Build
+### How to Clone and Build
 
 ### Step 1: Clone the Repository
 Open your terminal and run:
