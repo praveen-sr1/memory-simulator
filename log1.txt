@@ -1,0 +1,326 @@
+
+=========================================
+      MEMORY SIMULATOR CONFIGURATION      
+=========================================
+Select Operation Mode:
+  1. Continuous Allocation (Heap Management)
+  2. Discontinuous Allocation (Virtual Memory / Paging)
+> 
+--- Continuous Mode Setup ---
+Select Allocation Strategy:
+  1. First Fit
+  2. Best Fit
+  3. Worst Fit
+> Memory initialized 1024 bytes.
+[Hardware] L2 Cache Init: 4KB, 4-way, LRU
+[Hardware] L1 Cache Init: 1KB, 2-way, FIFO
+Unknown allocator. Defaulting to First Fit.
+>> Mode 1 Ready: Continuous Allocator + Cache
+
+Available Commands:
+  mode               : Restart and switch configuration
+  read <addr>        : CPU Read (Triggers Cache)
+  write <addr>       : CPU Write (Triggers Cache)
+  malloc <bytes>     : Allocate block
+  free <id>          : Free block
+  dump               : Show heap layout
+  stats              : Show system stats
+  exit               : Quit
+
+> 
+> 
+> 
+> 
+> Allocated block id=1 at address=0x0030
+>> [OS] Block allocated at Address: 0x30
+
+> Allocated block id=2 at address=0x0074
+>> [OS] Block allocated at Address: 0x74
+
+> Allocated block id=3 at address=0x01D0
+>> [OS] Block allocated at Address: 0x1D0
+
+> Allocated block id=4 at address=0x0214
+>> [OS] Block allocated at Address: 0x214
+
+> Allocated block id=5 at address=0x02A8
+>> [OS] Block allocated at Address: 0x2A8
+
+> 
+> Block 2 freed and merged
+
+> Block 4 freed and merged
+
+> Memory Map:
+[0x0030 - 0x0043] USED (id=1, size=20, requested=20)
+[0x0074 - 0x019F] FREE (300 bytes)
+[0x01D0 - 0x01E3] USED (id=3, size=20, requested=20)
+[0x0214 - 0x0277] FREE (100 bytes)
+[0x02A8 - 0x02BB] USED (id=5, size=20, requested=20)
+[0x02EC - 0x03FF] FREE (276 bytes)
+
+> 
+> 
+> Allocated block id=6 at address=0x0074
+>> [OS] Block allocated at Address: 0x74
+
+> Memory Map:
+[0x0030 - 0x0043] USED (id=1, size=20, requested=20)
+[0x0074 - 0x00C3] USED (id=6, size=80, requested=80)
+[0x00F4 - 0x019F] FREE (172 bytes)
+[0x01D0 - 0x01E3] USED (id=3, size=20, requested=20)
+[0x0214 - 0x0277] FREE (100 bytes)
+[0x02A8 - 0x02BB] USED (id=5, size=20, requested=20)
+[0x02EC - 0x03FF] FREE (276 bytes)
+
+> Memory Map:
+[0x0030 - 0x0043] USED (id=1, size=20, requested=20)
+[0x0074 - 0x00C3] USED (id=6, size=80, requested=80)
+[0x00F4 - 0x019F] FREE (172 bytes)
+[0x01D0 - 0x01E3] USED (id=3, size=20, requested=20)
+[0x0214 - 0x0277] FREE (100 bytes)
+[0x02A8 - 0x02BB] USED (id=5, size=20, requested=20)
+[0x02EC - 0x03FF] FREE (276 bytes)
+
+> 
+> 
+=========================================
+      MEMORY SIMULATOR CONFIGURATION      
+=========================================
+Select Operation Mode:
+  1. Continuous Allocation (Heap Management)
+  2. Discontinuous Allocation (Virtual Memory / Paging)
+> 
+--- Continuous Mode Setup ---
+Select Allocation Strategy:
+  1. First Fit
+  2. Best Fit
+  3. Worst Fit
+> Memory initialized 1024 bytes.
+[Hardware] L2 Cache Init: 4KB, 4-way, LRU
+[Hardware] L1 Cache Init: 1KB, 2-way, FIFO
+Unknown allocator. Defaulting to First Fit.
+>> Mode 1 Ready: Continuous Allocator + Cache
+
+Available Commands:
+  mode               : Restart and switch configuration
+  read <addr>        : CPU Read (Triggers Cache)
+  write <addr>       : CPU Write (Triggers Cache)
+  malloc <bytes>     : Allocate block
+  free <id>          : Free block
+  dump               : Show heap layout
+  stats              : Show system stats
+  exit               : Quit
+
+> 
+> 
+> 
+> 
+> Allocated block id=1 at address=0x0030
+>> [OS] Block allocated at Address: 0x30
+
+> Allocated block id=2 at address=0x0074
+>> [OS] Block allocated at Address: 0x74
+
+> Allocated block id=3 at address=0x01D0
+>> [OS] Block allocated at Address: 0x1D0
+
+> Allocated block id=4 at address=0x0214
+>> [OS] Block allocated at Address: 0x214
+
+> Allocated block id=5 at address=0x02A8
+>> [OS] Block allocated at Address: 0x2A8
+
+> Block 2 freed and merged
+
+> Block 4 freed and merged
+
+> 
+> 
+> Allocated block id=6 at address=0x0074
+>> [OS] Block allocated at Address: 0x74
+
+> Memory Map:
+[0x0030 - 0x0043] USED (id=1, size=20, requested=20)
+[0x0074 - 0x00C3] USED (id=6, size=80, requested=80)
+[0x00F4 - 0x019F] FREE (172 bytes)
+[0x01D0 - 0x01E3] USED (id=3, size=20, requested=20)
+[0x0214 - 0x0277] FREE (100 bytes)
+[0x02A8 - 0x02BB] USED (id=5, size=20, requested=20)
+[0x02EC - 0x03FF] FREE (276 bytes)
+
+> Memory Map:
+[0x0030 - 0x0043] USED (id=1, size=20, requested=20)
+[0x0074 - 0x00C3] USED (id=6, size=80, requested=80)
+[0x00F4 - 0x019F] FREE (172 bytes)
+[0x01D0 - 0x01E3] USED (id=3, size=20, requested=20)
+[0x0214 - 0x0277] FREE (100 bytes)
+[0x02A8 - 0x02BB] USED (id=5, size=20, requested=20)
+[0x02EC - 0x03FF] FREE (276 bytes)
+
+> 
+> 
+=========================================
+      MEMORY SIMULATOR CONFIGURATION      
+=========================================
+Select Operation Mode:
+  1. Continuous Allocation (Heap Management)
+  2. Discontinuous Allocation (Virtual Memory / Paging)
+> 
+--- Continuous Mode Setup ---
+Select Allocation Strategy:
+  1. First Fit
+  2. Best Fit
+  3. Worst Fit
+> Memory initialized 1024 bytes.
+[Hardware] L2 Cache Init: 4KB, 4-way, LRU
+[Hardware] L1 Cache Init: 1KB, 2-way, FIFO
+Unknown allocator. Defaulting to First Fit.
+>> Mode 1 Ready: Continuous Allocator + Cache
+
+Available Commands:
+  mode               : Restart and switch configuration
+  read <addr>        : CPU Read (Triggers Cache)
+  write <addr>       : CPU Write (Triggers Cache)
+  malloc <bytes>     : Allocate block
+  free <id>          : Free block
+  dump               : Show heap layout
+  stats              : Show system stats
+  exit               : Quit
+
+> 
+> 
+> 
+> 
+> 
+> Allocated block id=1 at address=0x0030
+>> [OS] Block allocated at Address: 0x30
+
+> Allocated block id=2 at address=0x0074
+>> [OS] Block allocated at Address: 0x74
+
+> Allocated block id=3 at address=0x0108
+>> [OS] Block allocated at Address: 0x108
+
+> Allocated block id=4 at address=0x014C
+>> [OS] Block allocated at Address: 0x14C
+
+> Allocated block id=5 at address=0x02A8
+>> [OS] Block allocated at Address: 0x2A8
+
+> Block 2 freed and merged
+
+> Block 4 freed and merged
+
+> Memory Map:
+[0x0030 - 0x0043] USED (id=1, size=20, requested=20)
+[0x0074 - 0x00D7] FREE (100 bytes)
+[0x0108 - 0x011B] USED (id=3, size=20, requested=20)
+[0x014C - 0x0277] FREE (300 bytes)
+[0x02A8 - 0x02BB] USED (id=5, size=20, requested=20)
+[0x02EC - 0x03FF] FREE (276 bytes)
+
+> 
+> 
+> Allocated block id=6 at address=0x0074
+>> [OS] Block allocated at Address: 0x74
+
+> Memory Map:
+[0x0030 - 0x0043] USED (id=1, size=20, requested=20)
+[0x0074 - 0x00A5] USED (id=6, size=50, requested=50)
+[0x00D6 - 0x00D7] FREE (2 bytes)
+[0x0108 - 0x011B] USED (id=3, size=20, requested=20)
+[0x014C - 0x0277] FREE (300 bytes)
+[0x02A8 - 0x02BB] USED (id=5, size=20, requested=20)
+[0x02EC - 0x03FF] FREE (276 bytes)
+
+> Memory Map:
+[0x0030 - 0x0043] USED (id=1, size=20, requested=20)
+[0x0074 - 0x00A5] USED (id=6, size=50, requested=50)
+[0x00D6 - 0x00D7] FREE (2 bytes)
+[0x0108 - 0x011B] USED (id=3, size=20, requested=20)
+[0x014C - 0x0277] FREE (300 bytes)
+[0x02A8 - 0x02BB] USED (id=5, size=20, requested=20)
+[0x02EC - 0x03FF] FREE (276 bytes)
+
+> 
+> 
+=========================================
+      MEMORY SIMULATOR CONFIGURATION      
+=========================================
+Select Operation Mode:
+  1. Continuous Allocation (Heap Management)
+  2. Discontinuous Allocation (Virtual Memory / Paging)
+> 
+--- Continuous Mode Setup ---
+Select Allocation Strategy:
+  1. First Fit
+  2. Best Fit
+  3. Worst Fit
+> Memory initialized 1024 bytes.
+[Hardware] L2 Cache Init: 4KB, 4-way, LRU
+[Hardware] L1 Cache Init: 1KB, 2-way, FIFO
+Unknown allocator. Defaulting to First Fit.
+>> Mode 1 Ready: Continuous Allocator + Cache
+
+Available Commands:
+  mode               : Restart and switch configuration
+  read <addr>        : CPU Read (Triggers Cache)
+  write <addr>       : CPU Write (Triggers Cache)
+  malloc <bytes>     : Allocate block
+  free <id>          : Free block
+  dump               : Show heap layout
+  stats              : Show system stats
+  exit               : Quit
+
+> 
+> 
+> 
+> 
+> Allocated block id=1 at address=0x0030
+>> [OS] Block allocated at Address: 0x30
+
+> Allocated block id=2 at address=0x00F6
+>> [OS] Block allocated at Address: 0xF6
+
+> Allocated block id=3 at address=0x01BC
+>> [OS] Block allocated at Address: 0x1BC
+
+> Block 1 freed and merged
+
+> Block 3 freed and merged
+
+> Memory Map:
+[0x0030 - 0x00C5] FREE (150 bytes)
+[0x00F6 - 0x018B] USED (id=2, size=150, requested=150)
+[0x01BC - 0x03FF] FREE (580 bytes)
+
+> 
+> Block 2 freed and merged
+
+> Memory Map:
+[0x0030 - 0x03FF] FREE (976 bytes)
+
+> === CONTINUOUS MEMORY STATS ===
+
+========== MEMORY METRICS ==========
+  Total Memory:       1024 bytes
+  Current Free:       976 bytes
+------------------------------------
+PERFORMANCE:
+  Success Rate:       100.00% (3 ok / 0 failed)
+------------------------------------
+EFFICIENCY:
+  Memory Utilization: 0.00% (Data / Total Capacity)
+  Internal Frag:      0 bytes (Wasted inside blocks)
+  External Frag:      0.00% (Wasted between blocks)
+  Fragmentation Holes:1 (Separate free chunks)
+====================================
+--- L1 Cache Stats (FIFO) ---
+Hits: 0 | Misses: 0
+Hit Ratio: 0.00%
+--- L2 Cache Stats (LRU) ---
+Hits: 0 | Misses: 0
+Hit Ratio: 0.00%
+
+> 

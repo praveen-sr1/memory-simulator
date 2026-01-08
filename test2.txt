@@ -1,0 +1,43 @@
+2
+# --- STEP 1: SPATIAL LOCALITY ---
+# Write 100 -> Page 1. (RAM Usage: 1/4)
+write 100
+# Read 105 -> Hits L1/Page 1.
+read 105
+
+# --- STEP 2: CACHE HIERARCHY & FILLING RAM ---
+# Write 0 -> Page 0. (RAM Usage: 2/4)
+write 0
+# Write 512 -> Page 8. (RAM Usage: 3/4)
+write 512
+# Write 1024 -> Page 16. (RAM Usage: 4/4)
+# Note: This also kicks Addr 0 out of L1 to L2.
+write 1024
+# RAM IS NOW FULL [Page 1, 0, 8, 16].
+
+# --- STEP 3: CONFLICT MISS & EVICTION START ---
+# Write 2048 -> Page 32.
+# RAM is full (4/4). This MUST evict a page to make room.
+write 2048
+# Check L2 Conflict logic
+read 0
+
+# --- STEP 4: VIRTUAL MEMORY (Force Swaps) ---
+# We write to NEW pages to force the "Evicting Page X" message.
+# Write 128 -> Page 2. (Evicts an old page).
+write 128
+# Write 192 -> Page 3. (Evicts an old page).
+write 192
+# Write 256 -> Page 4. (Evicts an old page).
+write 256
+# CHECK: You should see "Evicting..." messages here.
+
+# --- STEP 5: PROCESS ISOLATION ---
+switch 2
+# PID 2 has its own empty memory.
+# It should not see PID 1's data at 0.
+read 0
+write 0
+
+stats
+exit

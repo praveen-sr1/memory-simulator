@@ -1,0 +1,114 @@
+
+=========================================
+      MEMORY SIMULATOR CONFIGURATION      
+=========================================
+Select Operation Mode:
+  1. Continuous Allocation (Heap Management)
+  2. Discontinuous Allocation (Virtual Memory / Paging)
+> MMU Initialized. Multi-Process Support Enabled.
+[Hardware] L2 Cache Init: 4KB, 4-way, LRU
+[Hardware] L1 Cache Init: 1KB, 2-way, FIFO
+
+--- Discontinuous Mode Setup ---
+>> Mode 2 Ready: Virtual Memory (Paging) + Cache
+
+Available Commands:
+  mode               : Restart and switch configuration
+  read <addr>        : CPU Read (Triggers Cache)
+  write <addr>       : CPU Write (Triggers Cache)
+  switch <pid>       : Context switch process
+  stats              : Show system stats
+  exit               : Quit
+
+> 
+> 
+> 
+[CPU (PID 1)] Requesting (VM) WRITE at VA 0x100
+[MMU] PAGE FAULT (PID 1, VPN 4)! Loading PID 1's Page 4 into Frame 0.
+[L1 MISS] -> [L2 MISS] -> [RAM FETCH] 
+> 
+> 
+[CPU (PID 1)] Requesting (VM) READ at VA 0x105
+
+> 
+[CPU (PID 1)] Requesting (VM) READ at VA 0x105
+
+> 
+> 
+> 
+[CPU (PID 1)] Requesting (VM) WRITE at VA 0x0
+[MMU] PAGE FAULT (PID 1, VPN 0)! Loading PID 1's Page 0 into Frame 1.
+[L1 MISS] -> [L2 MISS] -> [RAM FETCH] 
+> 
+> 
+[CPU (PID 1)] Requesting (VM) WRITE at VA 0x512
+[MMU] PAGE FAULT (PID 1, VPN 20)! Loading PID 1's Page 20 into Frame 2.
+[L1 MISS] -> [L2 MISS] -> [RAM FETCH] 
+> 
+> 
+> 
+[CPU (PID 1)] Requesting (VM) WRITE at VA 0x1024
+[MMU] PAGE FAULT (PID 1, VPN 64)! Loading PID 1's Page 64 into Frame 3.
+[L1 MISS] -> [L2 MISS] -> [RAM FETCH] 
+> 
+> 
+> 
+> 
+> 
+> 
+[CPU (PID 1)] Requesting (VM) WRITE at VA 0x2048
+[MMU] PAGE FAULT (PID 1, VPN 129)! Evicting PID 1's Page 4 (Frame 0)... Loading PID 1's Page 129 into Frame 0.
+
+> 
+> 
+[CPU (PID 1)] Requesting (VM) READ at VA 0x0
+
+> 
+[CPU (PID 1)] Requesting (VM) READ at VA 0x0
+
+> 
+> 
+> 
+> 
+[CPU (PID 1)] Requesting (VM) WRITE at VA 0x128
+[MMU] PAGE FAULT (PID 1, VPN 4)! Evicting PID 1's Page 20 (Frame 2)... Loading PID 1's Page 4 into Frame 2.
+
+> 
+> 
+[CPU (PID 1)] Requesting (VM) WRITE at VA 0x192
+[MMU] PAGE FAULT (PID 1, VPN 6)! Evicting PID 1's Page 64 (Frame 3)... Loading PID 1's Page 6 into Frame 3.
+
+> 
+> 
+[CPU (PID 1)] Requesting (VM) WRITE at VA 0x256
+[MMU] PAGE FAULT (PID 1, VPN 9)! Evicting PID 1's Page 129 (Frame 0)... Loading PID 1's Page 9 into Frame 0.
+
+> 
+> 
+> 
+> >> Context Switch: Now running Process 2
+
+> 
+> 
+> 
+[CPU (PID 2)] Requesting (VM) READ at VA 0x0
+[MMU] PAGE FAULT (PID 2, VPN 0)! Evicting PID 1's Page 0 (Frame 1)... Loading PID 2's Page 0 into Frame 1.
+
+> 
+[CPU (PID 2)] Requesting (VM) WRITE at VA 0x0
+
+> 
+[CPU (PID 2)] Requesting (VM) WRITE at VA 0x0
+
+> --- MMU Stats ---
+Active Processes: 2
+Page Faults: 9
+Page Hits:   6
+--- L1 Cache Stats (FIFO) ---
+Hits: 11 | Misses: 4
+Hit Ratio: 73.33%
+--- L2 Cache Stats (LRU) ---
+Hits: 0 | Misses: 4
+Hit Ratio: 0.00%
+
+> 
