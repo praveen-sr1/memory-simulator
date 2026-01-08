@@ -24,5 +24,5 @@ This project simulates how an Operating System manages memory, including **First
 ### Step 1: Clone the Repository
 Open your terminal and run:
 ```bash
-git clone [https://github.com/praveen-sr1/memory-simulator.git](https://github.com/praveen-sr1/memory-simulator.git)
+git clone https://github.com/praveen-sr1/memory-simulator.git
 cd memory-simulator
